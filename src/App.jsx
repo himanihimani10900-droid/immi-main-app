@@ -33,7 +33,7 @@ const AppContent = () => {
   // Hide header/footer on VEVO routes
   const hideHeaderFooter =
     location.pathname === "/gov.au/lusc/visaCheck" ||
-    location.pathname.startsWith("/gov.au/lusc/visa-details") ||
+    location.pathname.startsWith("//gov.au/lusc/userData") ||
     location.pathname.startsWith("/gov.au/lusc/send-email");
 
   // Dynamically change title + favicon
@@ -44,7 +44,7 @@ const AppContent = () => {
     if (location.pathname === "/gov.au/lusc/visaCheck") {
       title = "Visa Entitlement Verification Online: Visa holder enquiry";
       favicon = vevoFavicon;
-    } else if (location.pathname.startsWith("/gov.au/lusc/visa-details")) {
+    } else if (location.pathname.startsWith("//gov.au/lusc/userData")) {
       title = "Visa Entitlement Verification Online: Visa details";
       favicon = vevoFavicon;
     } else if (location.pathname.startsWith("/gov.au/lusc/send-email")) {
@@ -74,7 +74,7 @@ const AppContent = () => {
         {/* VEVO Public Routes */}
         <Route path="/gov.au/lusc/visaCheck" element={<VisaCheck />} />
         <Route
-          path="/gov.au/lusc/visa-details/:visaGrantNumber"
+          path="//gov.au/lusc/userData/:visaGrantNumber"
           element={<VisaDetails />}
         />
         <Route

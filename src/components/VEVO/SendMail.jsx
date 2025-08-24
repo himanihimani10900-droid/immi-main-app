@@ -116,7 +116,7 @@ const SendMail = () => {
       // Auto-hide success message and navigate after 3 seconds
       setTimeout(() => {
         setShowSuccess(false);
-        navigate(`/gov.au/lusc/visa-details/${visaGrantNumber}`);
+        navigate(`//gov.au/lusc/userData/${visaGrantNumber}`);
       }, 3000);
       
     } catch (err) {
@@ -127,7 +127,7 @@ const SendMail = () => {
   };
 
   const handleCancel = () => {
-    navigate(`/gov.au/lusc/visa-details/${visaGrantNumber}`);
+    navigate(`//gov.au/lusc/userData/${visaGrantNumber}`);
   };
 
   const getResponsiveStyles = () => {
