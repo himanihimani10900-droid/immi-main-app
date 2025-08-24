@@ -334,7 +334,7 @@ const LoginPage = () => {
               <p style={{ margin: "0 0 10px 0" }}>
                 Please refer to{" "}
                 <a
-                  href="https://www.homeaffairs.gov.au/help-and-support/system-maintenance-and-technical-issues"
+                  href="#"
                   style={{ color: "#1B3564", textDecoration: "underline" }}
                 >
                   System Maintenance
@@ -355,7 +355,7 @@ const LoginPage = () => {
               <p style={{ margin: 0 }}>
                 For more information see{" "}
                 <a
-                  href="https://immi.homeaffairs.gov.au/news-media/archive/article?itemId=1325"
+                  href="#"
                   style={{ color: "#1B3564", textDecoration: "underline" }}
                 >
                   Multi-factor Authentication (MFA) is now live
