@@ -115,7 +115,7 @@ const AppContent = () => {
         />
 
         {/* Catch-all fallback route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/gov.au/lusc/login" replace />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </>
