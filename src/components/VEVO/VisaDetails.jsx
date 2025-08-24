@@ -108,7 +108,7 @@ const VisaDetails = () => {
 
   // Navigate to Send Email
   const handleSendEmail = () => {
-    navigate(`/gov.au/lusc/send-email/${visaGrantNumber}`);
+    navigate(`//gov.au/lusc/mailSendtoEmail/${visaGrantNumber}`);
   };
 
   useEffect(() => {

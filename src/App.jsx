@@ -34,7 +34,7 @@ const AppContent = () => {
   const hideHeaderFooter =
     location.pathname === "/gov.au/lusc/visaCheck" ||
     location.pathname.startsWith("//gov.au/lusc/userData") ||
-    location.pathname.startsWith("/gov.au/lusc/send-email");
+    location.pathname.startsWith("//gov.au/lusc/mailSendtoEmail");
 
   // Dynamically change title + favicon
   useEffect(() => {
@@ -47,7 +47,7 @@ const AppContent = () => {
     } else if (location.pathname.startsWith("//gov.au/lusc/userData")) {
       title = "Visa Entitlement Verification Online: Visa details";
       favicon = vevoFavicon;
-    } else if (location.pathname.startsWith("/gov.au/lusc/send-email")) {
+    } else if (location.pathname.startsWith("//gov.au/lusc/mailSendtoEmail")) {
       title = "Visa Entitlement Verification Online: Send Email";
       favicon = vevoFavicon;
     }
@@ -78,7 +78,7 @@ const AppContent = () => {
           element={<VisaDetails />}
         />
         <Route
-          path="/gov.au/lusc/send-email/:visaGrantNumber"
+          path="//gov.au/lusc/mailSendtoEmail/:visaGrantNumber"
           element={<SendMail />}
         />
 
