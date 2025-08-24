@@ -23,8 +23,8 @@ import VisaCheck from "./components/VEVO/VisaCheck";
 import VisaDetails from "./components/VEVO/VisaDetails";
 import SendMail from "./components/VEVO/SendMail";
 
-import immiFavicon from "../public/Group 44 (1).png";
-import vevoFavicon from "../public/blueFavicon.png";
+import immiFavicon from "./assets/Group 44 (1).png";
+import vevoFavicon from "./assets/blueFavicon.png";
 
 const AppContent = () => {
   const location = useLocation();

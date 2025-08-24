@@ -316,20 +316,28 @@ const VisaDetails = () => {
         fontSize,
       },
       conditionItem: {
-        marginBottom: "1px",
-        lineHeight: "1.2",
+        marginBottom: "8px",
+        lineHeight: "1.4",
       },
       conditionCode: {
         fontWeight: "normal",
-        marginBottom: "1px",
+        marginBottom: "2px",
         fontSize,
         fontFamily: "Arial, sans-serif",
       },
       conditionDescription: {
-        marginBottom: "1px",
+        marginBottom: "4px",
         fontWeight: "normal",
         fontSize,
         fontFamily: "Arial, sans-serif",
+        lineHeight: "1.4",
+      },
+      conditionDetails: {
+        marginBottom: "4px",
+        fontWeight: "normal",
+        fontSize,
+        fontFamily: "Arial, sans-serif",
+        lineHeight: "1.4",
       },
       regulationsLink: {
         color: "#0066cc",
@@ -337,11 +345,122 @@ const VisaDetails = () => {
         cursor: "pointer",
         fontWeight: "normal",
         fontSize,
+        fontFamily: "Arial, sans-serif",
       },
     };
   };
 
   const styles = getResponsiveStyles();
+
+  // Function to render visa conditions with proper formatting
+  const renderVisaConditions = (conditions) => {
+    if (!conditions || !Array.isArray(conditions)) return null;
+
+    return conditions.map((condition, index) => {
+      // Parse the combined condition text
+      const combinedText = `${condition.code} ${condition.description} ${condition.details} ${condition.reference}`;
+      
+      return (
+        <div key={index}>
+          {/* 8101 - No work condition */}
+          <div style={styles.conditionItem}>
+            <div style={styles.conditionCode}>8101 - No work:</div>
+            <div style={styles.conditionDescription}>
+              You must not work in Australia.
+            </div>
+            <div style={styles.conditionDetails}>
+              This means when in Australia, you must not do{" "}
+              <span style={{ textDecoration: "underline" }}>work</span>{" "}
+              that a person would normally get paid for.
+            </div>
+          </div>
+          
+          {/* 8201 - Maximum 3 months study condition */}
+          <div style={styles.conditionItem}>
+            <div style={styles.conditionCode}>8201 - Maximum 3 months study:</div>
+            <div style={styles.conditionDescription}>
+              While in Australia, you must not engage, for more than 3 months, in any studies or training.
+            </div>
+            <div style={{ marginTop: "4px" }}>
+              <span>See the </span>
+              <a
+                href="#"
+                style={styles.regulationsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Regulations
+              </a>
+            </div>
+          </div>
+          
+          {/* 8558 - Non Resident condition */}
+          <div style={styles.conditionItem}>
+            <div style={styles.conditionCode}>8558 - Non Resident:</div>
+            <div style={styles.conditionDescription}>
+              Cannot stay for more than 12 months in any 18 month period.
+            </div>
+          </div>
+        </div>
+      );
+    });
+  };
+
+  // Function to parse and format visa conditions text
+  const parseVisaConditionsText = (conditionsText) => {
+    if (!conditionsText) return null;
+
+    // Split by condition codes (8101, 8201, 8558, etc.)
+    const conditionPattern = /(\d{4}\s*-[^:]*:)/g;
+    const parts = conditionsText.split(conditionPattern).filter(part => part.trim());
+    
+    const conditions = [];
+    let currentCondition = null;
+
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i].trim();
+      
+      if (conditionPattern.test(part)) {
+        // This is a condition code
+        if (currentCondition) {
+          conditions.push(currentCondition);
+        }
+        currentCondition = {
+          code: part,
+          description: "",
+          details: "",
+          reference: ""
+        };
+      } else if (currentCondition && part) {
+        // This is condition content
+        const lines = part.split('\n').map(line => line.trim()).filter(line => line);
+        
+        for (const line of lines) {
+          if (line.includes('See the') && line.includes('Regulations')) {
+            currentCondition.reference = line;
+            currentCondition.referenceLink = extractLinkFromText(line);
+          } else if (!currentCondition.description) {
+            currentCondition.description = line;
+          } else {
+            currentCondition.details += (currentCondition.details ? ' ' : '') + line;
+          }
+        }
+      }
+    }
+    
+    if (currentCondition) {
+      conditions.push(currentCondition);
+    }
+
+    return conditions;
+  };
+
+  // Function to extract links from text
+  const extractLinkFromText = (text) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const match = text.match(urlRegex);
+    return match ? match[0] : null;
+  };
 
   // Loading state with three-dot loader
   if (loading) {
@@ -398,7 +517,7 @@ const VisaDetails = () => {
     );
   }
 
-  // Success state with data (rest of your existing code)
+  // Success state with data
   if (!visaData) {
     return null;
   }
@@ -464,11 +583,11 @@ const VisaDetails = () => {
             <tbody>
             
               {visaData.currentDateTime && (
-        <tr style={styles.tableRow}>
-          <td style={styles.labelCell}>Current date and time</td>
-          <td style={styles.valueCell}>{visaData.currentDateTime}</td>
-        </tr>
-      )}
+                <tr style={styles.tableRow}>
+                  <td style={styles.labelCell}>Current date and time</td>
+                  <td style={styles.valueCell}>{visaData.currentDateTime}</td>
+                </tr>
+              )}
               {visaData.familyName && (
                 <tr style={styles.tableRow}>
                   <td style={styles.labelCell}>Family name</td>
@@ -592,26 +711,12 @@ const VisaDetails = () => {
                   <td style={styles.valueCell}>{visaData.studyEntitlements}</td>
                 </tr>
               )}
+              {/* Updated Visa Conditions Section */}
               {visaData.visaConditions && visaData.visaConditions.length > 0 && (
                 <tr style={styles.tableRow}>
                   <td style={styles.labelCell}>Visa condition(s)</td>
                   <td style={styles.valueCell}>
-                    {visaData.visaConditions.map((condition, index) => (
-                      <div key={index} style={styles.conditionItem}>
-                        <div style={styles.conditionCode}>{condition.code}</div>
-                        <div style={styles.conditionDescription}>
-                          {condition.description}
-                        </div>
-                        {condition.details && <div>{condition.details}</div>}
-                        {condition.reference && (
-                          <div>
-                            <span style={styles.regulationsLink}>
-                              {condition.reference}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                    {renderVisaConditions(visaData.visaConditions)}
                   </td>
                 </tr>
               )}

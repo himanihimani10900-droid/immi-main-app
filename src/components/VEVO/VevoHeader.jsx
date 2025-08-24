@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import logo from "../../../public/logoheader.png";
+import logo from "../../assets/logoheader.png";
 
 const VevoHeader = () => {
   const [screenSize, setScreenSize] = useState({
