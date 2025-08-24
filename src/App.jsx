@@ -102,7 +102,7 @@ const AppContent = () => {
           }
         />
         <Route
-          path="/gov.au/lusc/verifcton"
+          path="/gov.au/lusc/verify-user"
           element={
             token ? <SkillsInDemandVerification /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }

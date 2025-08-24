@@ -38,7 +38,7 @@
 //     }
 
 //     // Navigate after API call
-//     navigate("/gov.au/lusc/verifcton");
+//     navigate("/gov.au/lusc/verify-user");
 //   };
 
 //   // Function to handle dropdown field clicks
@@ -70,7 +70,7 @@
 //     }
 
 //     // Navigate after API call
-//     navigate("/gov.au/lusc/verifcton");
+//     navigate("/gov.au/lusc/verify-user");
 //   };
 
 //   return (
@@ -2358,7 +2358,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Nomination for a Skills in Demand Visa (482)
                     </div>
@@ -2370,7 +2370,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Skills in Demand Visa (482)
                     </div>
@@ -2382,7 +2382,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Skills in Demand Visa - Subsequent Entrant (482)
                     </div>
@@ -2443,7 +2443,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Maritime Crew Visa (988)
                     </div>
@@ -2502,7 +2502,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       APEC Business Travel Card
                     </div>
@@ -2566,7 +2566,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Australian citizenship by conferral
                     </div>
@@ -2578,7 +2578,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Australian citizenship by descent
                     </div>
@@ -2590,7 +2590,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Evidence of Australian citizenship
                     </div>
@@ -2651,7 +2651,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Sponsorship for a Family Member (870)
                     </div>
@@ -2663,7 +2663,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Sponsorship for a Partner to Migrate to Australia
                       (300,309/100,820/801)
@@ -2676,7 +2676,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Stage 1 - Partner or Prospective Marriage Visa
                       (300,309/100,820/801)
@@ -2689,7 +2689,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Stage 2 - Permanent Partner Visa Assessment (100,801)
                     </div>
@@ -2701,7 +2701,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Sponsored Parent (Temporary) Visa (870)
                     </div>
@@ -2762,7 +2762,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       My Health Declarations
                     </div>
@@ -2823,7 +2823,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Request for a Labour Agreement (482, 186)
                     </div>
@@ -2889,7 +2889,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Notification of Family Violence - Secondary Applicant
                     </div>
@@ -2952,7 +2952,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Global Special Humanitarian Proposal (202)
                     </div>
@@ -2964,7 +2964,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Global Special Humanitarian Visa (202)
                     </div>
@@ -3028,7 +3028,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Resident Return Visa (155,157)
                     </div>
@@ -3089,7 +3089,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Nomination for a Skilled Employer Sponsored Regional
                       (Provisional) Visa (494)
@@ -3102,7 +3102,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Skilled Employer Sponsored Regional (Provisional) Visa
                       (494)
@@ -3115,7 +3115,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Skilled Regional (Provisional) (Subsequent Entrant) Visa
                       (491, 494)
@@ -3128,7 +3128,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Permanent Residence (Skilled Regional) Visa (191)
                     </div>
@@ -3140,7 +3140,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Employer Nomination for a Permanent Position (186,187)
                     </div>
@@ -3152,7 +3152,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Permanent Employer Sponsored or Nominated Visa (186,187)
                     </div>
@@ -3164,7 +3164,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       National Innovation visa (858)
                     </div>
@@ -3176,7 +3176,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Hong Kong and New Zealand Stream - Skilled Independent
                       Visa (189)
@@ -3189,7 +3189,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Skilled Regional Visa (887)
                     </div>
@@ -3201,7 +3201,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Business Innovation and Investment Visa (Permanent) (888)
                     </div>
@@ -3213,7 +3213,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Business Innovation and Investment Visa (Renewal) (188)
                     </div>
@@ -3225,7 +3225,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Business Innovation and Investment Visa (Subsequent
                       Entrant) (188)
@@ -3238,7 +3238,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Provisional Skilled Regional Visa (Renewal) (489)
                     </div>
@@ -3250,7 +3250,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Provisional Skilled Regional Visa (Subsequent Entrant)
                       (489)
@@ -3317,7 +3317,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Standard Business Sponsorship (482, 494)
                     </div>
@@ -3329,7 +3329,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Standard Business Sponsorship Renewal (482, 494)
                     </div>
@@ -3393,7 +3393,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Bridging visa E (050)
                     </div>
@@ -3454,7 +3454,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Student Guardian Visa (590)
                     </div>
@@ -3466,7 +3466,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Student Visa (500)
                     </div>
@@ -3478,7 +3478,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Student Visa (Subsequent Entrant) (500)
                     </div>
@@ -3544,7 +3544,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Sponsorship for Temporary Activities (403, 407, 408)
                     </div>
@@ -3556,7 +3556,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Temporary Activity Visa (408)
                     </div>
@@ -3568,7 +3568,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Temporary Work - International Relations Visa (403)
                     </div>
@@ -3580,7 +3580,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Temporary Work - Short Stay Specialist Visa (400)
                     </div>
@@ -3592,7 +3592,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Temporary Work and Activity Visas (Subsequent Entrant)
                       (403, 407, 408)
@@ -3605,7 +3605,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Training Nomination (407)
                     </div>
@@ -3617,7 +3617,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Training Visa (407)
                     </div>
@@ -3629,7 +3629,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Temporary Graduate Visa (485)
                     </div>
@@ -3641,7 +3641,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Temporary Graduate (Subsequent Entrant) Visa (485)
                     </div>
@@ -3707,7 +3707,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Registration - Pacific Engagement Visa (192)
                     </div>
@@ -3719,7 +3719,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Registration - Pacific Engagement Visa (192) - Tuvalu
                       Treaty Stream
@@ -3732,7 +3732,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Registration - Mobility Arrangement for Talented
                       Early-professionals Scheme (MATES) (403)
@@ -3745,7 +3745,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Registration - Work and Holiday Visa (462)
                     </div>
@@ -3806,7 +3806,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       eVisitor (651)
                     </div>
@@ -3818,7 +3818,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Visitor Visa (600)
                     </div>
@@ -3830,7 +3830,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Transit Visa (771)
                     </div>
@@ -3842,7 +3842,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Medical Treatment Visa (602)
                     </div>
@@ -3908,7 +3908,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Work and Holiday Visa (462)
                     </div>
@@ -3920,7 +3920,7 @@ const NewApplication = () => {
                         color: "#333",
                         backgroundColor: "transparent",
                       }}
-                      onClick={() => navigate("/gov.au/lusc/verifcton")}
+                      onClick={() => navigate("/gov.au/lusc/verify-user")}
                     >
                       Working Holiday Visa (417)
                     </div>
