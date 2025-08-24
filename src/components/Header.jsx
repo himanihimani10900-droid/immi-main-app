@@ -39,7 +39,7 @@ const Header = () => {
     localStorage.removeItem("userData");
 
     // Redirect to login page
-    window.location.href = "/gov.au/lusc/login";
+    window.location.href = "/gov.au/lusc/lgin";
   };
 
   useEffect(() => {

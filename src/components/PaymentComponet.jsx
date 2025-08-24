@@ -73,7 +73,7 @@ const PaymentComponent = () => {
         console.error("Unauthorized access. Please login again.");
         localStorage.removeItem('authToken');
         setError("Session expired. Please login again.");
-        setTimeout(() => navigate("/gov.au/lusc/login"), 2000);
+        setTimeout(() => navigate("/gov.au/lusc/lgin"), 2000);
       } else {
         console.error("Error fetching transactions:", response.statusText);
         setError("Failed to fetch transactions. Please try again later.");

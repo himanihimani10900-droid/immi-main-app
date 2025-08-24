@@ -78,7 +78,7 @@ const RazorPay = () => {
       } else if (response.status === 401) {
         console.error("Unauthorized access. Please login again.");
         localStorage.removeItem('authToken');
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
       } else {
         console.error("Error fetching transactions:", response.statusText);
       }
@@ -106,7 +106,7 @@ const RazorPay = () => {
     const token = getAuthToken();
     if (!token) {
       alert("Authentication required. Please login again.");
-      navigate("/gov.au/lusc/login");
+      navigate("/gov.au/lusc/lgin");
       return;
     }
 
@@ -129,7 +129,7 @@ const RazorPay = () => {
       if (response.status === 401) {
         localStorage.removeItem('authToken');
         alert("Session expired. Please login again.");
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
         return;
       }
 
@@ -164,7 +164,7 @@ const RazorPay = () => {
             if (verifyRes.status === 401) {
               localStorage.removeItem('authToken');
               alert("Session expired. Please login again.");
-              navigate("/gov.au/lusc/login");
+              navigate("/gov.au/lusc/lgin");
               return;
             }
 

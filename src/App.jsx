@@ -65,7 +65,7 @@ const AppContent = () => {
       {!hideHeaderFooter && <Header />}
       <Routes>
         {/* Public Routes */}
-        <Route path="/gov.au/lusc/login" element={<LoginPage />} />
+        <Route path="/gov.au/lusc/lgin" element={<LoginPage />} />
         <Route path="/gov.au/lusc/signup" element={<SignUp />} />
         <Route path="/gov.au/lusc/register" element={<VerificationCode />} />
         <Route path="/gov.au/lusc/create-account" element={<AccountDetails />} />
@@ -86,36 +86,36 @@ const AppContent = () => {
         <Route
           path="/gov.au/lusc/dashboard"
           element={
-            token ? <Dashboard /> : <Navigate to="/gov.au/lusc/login" replace />
+            token ? <Dashboard /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }
         />
         <Route
           path="/gov.au/lusc/new-application"
           element={
-            token ? <NewApplication /> : <Navigate to="/gov.au/lusc/login" replace />
+            token ? <NewApplication /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }
         />
         <Route
           path="/gov.au/lusc/payment"
           element={
-            token ? <PaymentComponet /> : <Navigate to="/gov.au/lusc/login" replace />
+            token ? <PaymentComponet /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }
         />
         <Route
-          path="/gov.au/lusc/verification"
+          path="/gov.au/lusc/verifcton"
           element={
-            token ? <SkillsInDemandVerification /> : <Navigate to="/gov.au/lusc/login" replace />
+            token ? <SkillsInDemandVerification /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }
         />
         <Route
           path="/gov.au/lusc/submit-form"
           element={
-            token ? <SubmitForm /> : <Navigate to="/gov.au/lusc/login" replace />
+            token ? <SubmitForm /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }
         />
 
         {/* Catch-all fallback route */}
-        <Route path="*" element={<Navigate to="/gov.au/lusc/login" replace />} />
+        <Route path="*" element={<Navigate to="/gov.au/lusc/lgin" replace />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </>

@@ -276,7 +276,7 @@ const SignUp = () => {
             >
               <button
                 type="button"
-                onClick={() => navigate("/gov.au/lusc/login")}
+                onClick={() => navigate("/gov.au/lusc/lgin")}
                 style={{
                   padding: isMobile ? "5px 25px" : (window.innerWidth <= 480 ? "4px 6px" : window.innerWidth <= 768 ? "4px 8px" : window.innerWidth > 1200 ? "5px 14px" : "4px 11px"),
                   // fontSize: isMobile ? "16px" : "13px",

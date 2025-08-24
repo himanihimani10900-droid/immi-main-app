@@ -486,7 +486,7 @@
 
 //       if (response.status === 401) {
 //         localStorage.removeItem("authToken");
-//         navigate("/gov.au/lusc/login");
+//         navigate("/gov.au/lusc/lgin");
 //         return;
 //       }
 
@@ -567,7 +567,7 @@
 
 //       if (response.status === 401) {
 //         localStorage.removeItem("authToken");
-//         navigate("/gov.au/lusc/login");
+//         navigate("/gov.au/lusc/lgin");
 //         return;
 //       }
 
@@ -719,14 +719,14 @@
 //       const token = getAuthToken();
 //       if (!token) {
 //         console.error("No auth token found");
-//         navigate("/gov.au/lusc/login");
+//         navigate("/gov.au/lusc/lgin");
 //         return;
 //       }
 
 //       const lsUserData = getUserDataFromLS();
 //       if (!lsUserData || !lsUserData.user_id) {
 //         console.error("No user data or user_id found in localStorage");
-//         navigate("/gov.au/lusc/login");
+//         navigate("/gov.au/lusc/lgin");
 //         return;
 //       }
 
@@ -744,7 +744,7 @@
 
 //       if (response.status === 401) {
 //         localStorage.removeItem("authToken");
-//         navigate("/gov.au/lusc/login");
+//         navigate("/gov.au/lusc/lgin");
 //         return;
 //       }
 
@@ -1907,7 +1907,7 @@ const Dashboard = () => {
 
       if (response.status === 401) {
         localStorage.removeItem("authToken");
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
         return;
       }
 
@@ -1961,7 +1961,7 @@ const Dashboard = () => {
 
       if (response.status === 401) {
         localStorage.removeItem("authToken");
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
         return;
       }
 
@@ -2125,7 +2125,7 @@ const Dashboard = () => {
 
       if (response.status === 401) {
         localStorage.removeItem("authToken");
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
         return;
       }
 
@@ -2373,14 +2373,14 @@ const formatSubmittedDate = (dateString) => {
       const token = getAuthToken();
       if (!token) {
         console.error("No auth token found");
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
         return;
       }
 
       const lsUserData = getUserDataFromLS();
       if (!lsUserData || !lsUserData.user_id) {
         console.error("No user data or user_id found in localStorage");
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
         return;
       }
 
@@ -2398,7 +2398,7 @@ const formatSubmittedDate = (dateString) => {
 
       if (response.status === 401) {
         localStorage.removeItem("authToken");
-        navigate("/gov.au/lusc/login");
+        navigate("/gov.au/lusc/lgin");
         return;
       }
 
