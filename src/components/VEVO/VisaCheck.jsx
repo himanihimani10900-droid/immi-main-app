@@ -129,7 +129,7 @@ const VisaCheck = () => {
     } else {
       // Final submit - navigate to visa details page
 
-      navigate(`//gov.au/lusc/userData/${formData.visaGrantNumber}`);
+      navigate(`/gov.au/lusc/userData/${formData.visaGrantNumber}`);
     }
   };
 
