@@ -2223,7 +2223,7 @@ const Dashboard = () => {
         color: "#22c55e",
         backgroundColor: "#dcfce7",
         icon: "✅",
-        text: "Visa Granted",
+        text: "Granted",
       };
     }
 
