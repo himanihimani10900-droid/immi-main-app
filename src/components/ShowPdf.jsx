@@ -5,7 +5,25 @@ const PDFViewer = ({ userEmail, onClose }) => {
   const [pdfBlob, setPdfBlob] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const isMobile = window.innerWidth <= 768;
+  const [screenSize, setScreenSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  // Handle screen resize
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = screenSize.width <= 768;
 
   useEffect(() => {
     const loadPDF = async () => {
@@ -73,18 +91,19 @@ const PDFViewer = ({ userEmail, onClose }) => {
   };
 
   const headerStyle = {
-    padding: "12px 16px",
+    padding: isMobile ? "8px 12px" : "12px 16px",
     borderBottom: "1px solid #ccc",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    flexWrap: "wrap",
   };
 
   const buttonStyle = {
     background: "none",
     border: "none",
-    padding: "6px 10px",
-    fontSize: "14px",
+    padding: isMobile ? "4px 8px" : "6px 10px",
+    fontSize: isMobile ? "12px" : "14px",
     cursor: "pointer",
   };
 
@@ -157,7 +176,7 @@ const PDFViewer = ({ userEmail, onClose }) => {
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h3 style={{ margin: 0 }}>PDF Viewer</h3>
+        <h3 style={{ margin: 0, fontSize: isMobile ? "14px" : "16px" }}>PDF Viewer</h3>
         <button onClick={onClose} style={buttonStyle}>
           Close
         </button>
@@ -174,7 +193,7 @@ const ShowPdf = () => {
   const [error, setError] = useState(null);
   const [userData, setUserData] = useState(null);
   const [showPdf, setShowPdf] = useState(false);
-  const [showApiPdfViewer, setShowApiPdfViewer] = useState(false); // New state for API PDF viewer
+  const [showApiPdfViewer, setShowApiPdfViewer] = useState(false);
 
   // Screen size state for responsiveness
   const [screenSize, setScreenSize] = useState({
@@ -199,7 +218,7 @@ const ShowPdf = () => {
   const isMobile = screenSize.width <= 480;
   const isTablet = screenSize.width > 480 && screenSize.width <= 768;
 
-  // Get user data from localStorage instead of in-memory data
+  // Get user data from localStorage
   const getUserData = () => {
     try {
       const data = localStorage.getItem("userData");
@@ -207,7 +226,6 @@ const ShowPdf = () => {
         return JSON.parse(data);
       }
       
-      // Fallback data if localStorage is empty
       const fallbackData = {
         name: "John Doe",
         email: "john.doe@email.com",
@@ -239,7 +257,6 @@ const ShowPdf = () => {
         return;
       }
 
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const pdfContent = `data:text/html,<html><body style="font-family: Arial; padding: 20px; background: white;"><div style="text-align: center; margin-bottom: 30px;"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24'%3E%3Cpath fill='%23072243' d='M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5v4.5h4.5L13 3.5z'/%3E%3C/svg%3E" style="margin-bottom: 20px;"/><h1 style="color: #072243; margin-bottom: 20px;">VISA GRANT NOTIFICATION</h1></div><div style="line-height: 1.6; color: #333;"><p><strong>Dear ${
@@ -258,7 +275,6 @@ const ShowPdf = () => {
     }
   };
 
-  // Handle click on IMMI Acknowledgement
   const handleImmiAcknowledgementClick = () => {
     const userDataFromLS = getUserData();
     if (userDataFromLS?.email) {
@@ -285,7 +301,6 @@ const ShowPdf = () => {
     console.log("Navigate to dashboard");
   };
 
-  // Get current date in DD MMM YYYY format
   const getCurrentDate = () => {
     const today = new Date();
     const options = { day: "2-digit", month: "short", year: "numeric" };
@@ -307,9 +322,14 @@ const ShowPdf = () => {
       style={{
         fontFamily: "Arial, sans-serif",
         backgroundColor: "#CCCCCC",
+        minHeight: "fit-content",
         height: "fit-content",
+        width: "100%",
+        padding: "0 20px", // 20px gap from left and right
+        boxSizing: "border-box",
       }}
     >
+      {/* Top Navigation Bar */}
       <div
         style={{
           backgroundColor: "#f8f9fa",
@@ -317,10 +337,16 @@ const ShowPdf = () => {
           padding: isMobile ? "6px 8px" : isTablet ? "8px 12px" : "8px 16px",
           display: "flex",
           alignItems: "center",
-          gap: isMobile ? "8px" : isTablet ? "12px" : "20px",
+          gap: isMobile ? "6px" : isTablet ? "8px" : "12px",
           fontSize: isMobile ? "10px" : isTablet ? "11px" : "12px",
           overflowX: "auto",
           whiteSpace: "nowrap",
+          width: "100%",
+          boxSizing: "border-box",
+          marginLeft: "-20px",
+          marginRight: "-20px",
+          paddingLeft: "20px",
+          paddingRight: "20px",
         }}
       >
         <span
@@ -328,7 +354,7 @@ const ShowPdf = () => {
             color: "#0066cc",
             cursor: "pointer",
             borderRight: "1px solid #dee2e6",
-            paddingRight: isMobile ? "8px" : isTablet ? "12px" : "20px",
+            paddingRight: isMobile ? "6px" : isTablet ? "8px" : "12px",
             flexShrink: 0,
           }}
         >
@@ -339,7 +365,7 @@ const ShowPdf = () => {
             color: "#333",
             cursor: "pointer",
             borderRight: "1px solid #dee2e6",
-            paddingRight: isMobile ? "8px" : isTablet ? "12px" : "20px",
+            paddingRight: isMobile ? "6px" : isTablet ? "8px" : "12px",
             flexShrink: 0,
           }}
         >
@@ -350,7 +376,7 @@ const ShowPdf = () => {
             color: "#333",
             cursor: "pointer",
             borderRight: "1px solid #dee2e6",
-            paddingRight: isMobile ? "8px" : isTablet ? "12px" : "20px",
+            paddingRight: isMobile ? "6px" : isTablet ? "8px" : "12px",
             flexShrink: 0,
           }}
         >
@@ -361,7 +387,7 @@ const ShowPdf = () => {
             color: "#333",
             cursor: "pointer",
             borderRight: "1px solid #dee2e6",
-            paddingRight: isMobile ? "8px" : isTablet ? "12px" : "20px",
+            paddingRight: isMobile ? "6px" : isTablet ? "8px" : "12px",
             flexShrink: 0,
           }}
         >
@@ -377,54 +403,61 @@ const ShowPdf = () => {
           {isMobile ? "Help ▼" : "Help and support ▼"}
         </span>
       </div>
+
       {/* Main Container */}
       <div
         style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
+          width: "100%",
           height: "fit-content",
           backgroundColor: "#CCCCCC",
           marginTop: "10px",
+          boxSizing: "border-box",
         }}
       >
         {/* Main Header */}
         <header
           style={{
             background: "#072243",
-            padding: isMobile ? "8px 12px" : "12px 20px",
+            padding: isMobile ? "8px 12px" : isTablet ? "10px 16px" : "12px 20px",
             color: "white",
-            fontSize: isMobile ? "11px" : "13px",
+            fontSize: isMobile ? "10px" : isTablet ? "11px" : "13px",
             fontWeight: "bold",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             flexWrap: "wrap",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
-          <div>
-            Application for a Visitor Short Stay Visa Reference Number:ECPXJY8B2
+          <div style={{ wordBreak: "break-word" }}>
+            Application for a Visitor Short Stay Visa Reference Number: ECPXJY8B2
           </div>
         </header>
 
-        {/* Content Area - Single unified div */}
+        {/* Content Area */}
         <div
           style={{
             display: "flex",
             flexDirection: isMobile ? "column" : "row",
             minHeight: "fit-content",
+            height: "fit-content",
             backgroundColor: "white",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
           {/* Sidebar */}
           <div
             style={{
-              width: isMobile ? "100%" : "280px",
+              width: isMobile ? "100%" : isTablet ? "240px" : "280px",
               backgroundColor: "white",
               height: "fit-content",
-              minHeight: "fit-content",
+              borderRight: isMobile ? "none" : "1px solid #e0e0e0",
+              flexShrink: 0,
             }}
           >
-            <div style={{ padding: isMobile ? "12px" : "16px" }}>
+            <div style={{ padding: isMobile ? "12px" : isTablet ? "16px" : "20px" }}>
               {/* Main Menu Items */}
               {menuItems.map((item, index) => (
                 <div
@@ -433,10 +466,11 @@ const ShowPdf = () => {
                     cursor: "default",
                     backgroundColor: "transparent",
                     color: "#333",
-                    fontSize: isMobile ? "11px" : "12px",
+                    fontSize: isMobile ? "11px" : isTablet ? "12px" : "13px",
                     fontWeight: "600",
                     borderRadius: "3px",
-                    marginBottom: "3px",
+                    marginBottom: "4px",
+                    padding: "6px 8px",
                     borderLeft: "3px solid transparent",
                     lineHeight: "1.4",
                   }}
@@ -448,19 +482,19 @@ const ShowPdf = () => {
               {/* Actions Section */}
               <div
                 style={{
-                  marginTop: "16px",
+                  marginTop: "20px",
                   borderTop: "1px solid #ddd",
-                  paddingTop: "12px",
+                  paddingTop: "16px",
                 }}
               >
                 <div
                   style={{
-                    padding: "4px 10px",
-                    fontSize: "10px",
+                    padding: "4px 8px",
+                    fontSize: isMobile ? "9px" : "10px",
                     fontWeight: "bold",
                     color: "#666",
                     textTransform: "uppercase",
-                    marginBottom: "6px",
+                    marginBottom: "8px",
                   }}
                 >
                   ACTIONS
@@ -472,10 +506,11 @@ const ShowPdf = () => {
                       cursor: "default",
                       backgroundColor: "transparent",
                       color: "#333",
-                      fontSize: isMobile ? "11px" : "12px",
+                      fontSize: isMobile ? "11px" : isTablet ? "12px" : "13px",
                       fontWeight: "600",
                       borderRadius: "3px",
-                      marginBottom: "3px",
+                      marginBottom: "4px",
+                      padding: "6px 8px",
                       borderLeft: "3px solid transparent",
                       lineHeight: "1.4",
                     }}
@@ -484,35 +519,29 @@ const ShowPdf = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Back Button */}
-              <div
-                style={{
-                  marginTop: "16px",
-                  borderTop: "1px solid #ddd",
-                  paddingTop: "12px",
-                }}
-              ></div>
             </div>
           </div>
 
-          {/* Main Content - Vertical Layout */}
+          {/* Main Content */}
           <div
             style={{
               flex: "1",
-              padding: isMobile ? "12px" : "20px",
+              padding: isMobile ? "12px" : isTablet ? "16px" : "20px",
               backgroundColor: "white",
               display: "flex",
               flexDirection: "column",
+              width: "100%",
+              boxSizing: "border-box",
+              minWidth: 0,
             }}
           >
             {/* Messages Heading */}
             <h2
               style={{
-                fontSize: isMobile ? "16px" : "18px",
+                fontSize: isMobile ? "16px" : isTablet ? "18px" : "20px",
                 fontWeight: "bold",
                 color: "#333",
-                marginBottom: "16px",
+                marginBottom: isMobile ? "12px" : "16px",
                 marginTop: "0",
               }}
             >
@@ -523,10 +552,11 @@ const ShowPdf = () => {
             <div
               style={{
                 borderRadius: "4px",
-                padding: isMobile ? "10px" : "14px",
-                fontSize: isMobile ? "11px" : "14px",
-                lineHeight: "1.5",
-                marginBottom: "20px",
+                padding: isMobile ? "10px" : isTablet ? "12px" : "16px",
+                fontSize: isMobile ? "11px" : isTablet ? "12px" : "14px",
+                lineHeight: "1.6",
+                marginBottom: isMobile ? "16px" : "20px",
+                backgroundColor: "transparent",
               }}
             >
               Correspondence for this application is currently being sent to the
@@ -544,69 +574,51 @@ const ShowPdf = () => {
               correspondence.
             </div>
 
-            {/* Correspondence Table - No borders/lines */}
+            {/* Correspondence Table */}
             <div
               style={{
                 backgroundColor: "white",
                 marginBottom: "20px",
+                width: "100%",
               }}
             >
-              {/* Table Header Row - No borders */}
+              {/* Table Header Row */}
               <div
                 style={{
                   display: isMobile ? "none" : "grid",
                   gridTemplateColumns: "2fr 1fr 2fr",
                   backgroundColor: "#767B8D",
-                  fontSize: "12px",
+                  fontSize: isMobile ? "10px" : isTablet ? "11px" : "12px",
                   fontWeight: "bold",
                   color: "white",
                 }}
               >
-                <div
-                  style={{
-                    padding: "4px ",
-                  }}
-                >
-                  Correspondence
-                </div>
-                <div
-                  style={{
-                    padding: "4px ",
-                  }}
-                >
-                  Date sent
-                </div>
-                <div
-                  style={{
-                    padding: "4px ",
-                  }}
-                >
-                  Email
-                </div>
+                <div style={{ padding: "8px" }}>Correspondence</div>
+                <div style={{ padding: "8px" }}>Date sent</div>
+                <div style={{ padding: "8px" }}>Email</div>
               </div>
 
-              {/* IMMI Grant Notification Row - No borders */}
+              {/* IMMI Grant Notification Row */}
               <div
                 style={{
                   display: isMobile ? "block" : "grid",
                   gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 2fr",
                   backgroundColor: "white",
-                  fontSize: isMobile ? "11px" : "12px",
-                  marginBottom: "12px",
+                  fontSize: isMobile ? "11px" : isTablet ? "12px" : "13px",
+                  marginBottom: isMobile ? "12px" : "8px",
+                  padding: isMobile ? "8px" : "4px 0",
+                  border: isMobile ? "1px solid #eee" : "none",
+                  borderRadius: isMobile ? "4px" : "0",
                 }}
               >
-                <div
-                  style={{
-                    color: "#333",
-                    fontWeight: "normal",
-                  }}
-                >
+                <div style={{ color: "#333", fontWeight: "normal", padding: "4px 8px" }}>
                   {isMobile && (
                     <span
                       style={{
                         color: "#666",
                         fontSize: "10px",
                         display: "block",
+                        marginBottom: "4px",
                       }}
                     >
                       Correspondence
@@ -615,11 +627,7 @@ const ShowPdf = () => {
                   IMMI Grant Notification
                 </div>
 
-                <div
-                  style={{
-                    color: "#333",
-                  }}
-                >
+                <div style={{ color: "#333", padding: "4px 8px" }}>
                   {isMobile && (
                     <span
                       style={{
@@ -635,11 +643,7 @@ const ShowPdf = () => {
                   {getCurrentDate()}
                 </div>
 
-                <div
-                  style={{
-                    color: "#333",
-                  }}
-                >
+                <div style={{ color: "#333", padding: "4px 8px" }}>
                   {isMobile && (
                     <span
                       style={{
@@ -656,23 +660,27 @@ const ShowPdf = () => {
                 </div>
               </div>
 
-              {/* IMMI Acknowledgement Row - Now clickable */}
+              {/* IMMI Acknowledgement Row - Clickable */}
               <div
                 style={{
                   display: isMobile ? "block" : "grid",
                   gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 2fr",
                   backgroundColor: "white",
-                  fontSize: isMobile ? "11px" : "12px",
-                  marginBottom: "12px",
-                  cursor: "pointer", // Added cursor pointer
+                  fontSize: isMobile ? "11px" : isTablet ? "12px" : "13px",
+                  marginBottom: isMobile ? "12px" : "8px",
+                  cursor: "pointer",
+                  padding: isMobile ? "8px" : "4px 0",
+                  border: isMobile ? "1px solid #eee" : "none",
+                  borderRadius: isMobile ? "4px" : "0",
                 }}
-                onClick={handleImmiAcknowledgementClick} // Added click handler
+                onClick={handleImmiAcknowledgementClick}
               >
                 <div
                   style={{
-                    color: "#0066cc", // Changed color to blue to indicate it's clickable
+                    color: "#0066cc",
                     fontWeight: "normal",
-                    textDecoration: "underline", // Added underline to show it's clickable
+                    textDecoration: "underline",
+                    padding: "4px 8px",
                   }}
                 >
                   {isMobile && (
@@ -681,7 +689,7 @@ const ShowPdf = () => {
                         color: "#666",
                         fontSize: "10px",
                         display: "block",
-                        marginBottom: "-20px",
+                        marginBottom: "4px",
                       }}
                     >
                       Correspondence
@@ -690,11 +698,7 @@ const ShowPdf = () => {
                   IMMI Acknowledgement of Application Received
                 </div>
 
-                <div
-                  style={{
-                    color: "#333",
-                  }}
-                >
+                <div style={{ color: "#333", padding: "4px 8px" }}>
                   {isMobile && (
                     <span
                       style={{
@@ -710,11 +714,7 @@ const ShowPdf = () => {
                   {getCurrentDate()}
                 </div>
 
-                <div
-                  style={{
-                    color: "#333",
-                  }}
-                >
+                <div style={{ color: "#333", padding: "4px 8px" }}>
                   {isMobile && (
                     <span
                       style={{
@@ -732,19 +732,19 @@ const ShowPdf = () => {
               </div>
             </div>
 
-            {/* Show PDF or Other Content */}
+            {/* Show PDF Content */}
             {showPdf && (
-              <div style={{ marginTop: "20px" }}>
+              <div style={{ marginTop: "20px", width: "100%" }}>
                 <button
                   onClick={() => setShowPdf(false)}
                   style={{
-                    padding: "10px 16px",
+                    padding: isMobile ? "8px 12px" : "10px 16px",
                     backgroundColor: "#0066cc",
                     color: "white",
                     border: "none",
                     borderRadius: "4px",
                     cursor: "pointer",
-                    fontSize: "12px",
+                    fontSize: isMobile ? "11px" : "12px",
                     marginBottom: "16px",
                   }}
                 >
@@ -752,11 +752,13 @@ const ShowPdf = () => {
                 </button>
                 <div
                   style={{
-                    height: isMobile ? "400px" : "550px",
+                    height: isMobile ? "400px" : isTablet ? "500px" : "600px",
                     display: "flex",
                     flexDirection: "column",
                     border: "1px solid #ddd",
                     borderRadius: "4px",
+                    width: "100%",
+                    boxSizing: "border-box",
                   }}
                 >
                   {loading && (
@@ -783,6 +785,7 @@ const ShowPdf = () => {
                         flexDirection: "column",
                         gap: "16px",
                         color: "#d32f2f",
+                        fontSize: isMobile ? "12px" : "14px",
                       }}
                     >
                       <div>⚠️ Error loading document: {error}</div>
