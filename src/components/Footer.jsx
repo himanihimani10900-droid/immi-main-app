@@ -14,6 +14,7 @@ const Footer = () => {
           color: "#666",
           backgroundColor: "#f0f0f0",
           marginTop: "-0px",
+          height:"content-fit"
         }}
       >
         <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>

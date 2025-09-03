@@ -25,16 +25,18 @@ import SendMail from "./components/VEVO/SendMail";
 
 import immiFavicon from "./assets/Group 44 (1).png";
 import vevoFavicon from "./assets/blueFavicon.png";
+import ShowPdf from "./components/ShowPdf";
 
 const AppContent = () => {
   const location = useLocation();
   const token = localStorage.getItem("authToken");
 
-  // Hide header/footer on VEVO routes
+  // Hide header/footer on VEVO routes and PDF viewer
   const hideHeaderFooter =
     location.pathname === "/gov.au/lusc/visaCheck" ||
     location.pathname.startsWith("/gov.au/lusc/userData") ||
-    location.pathname.startsWith("/gov.au/lusc/mailSendtoEmail");
+    location.pathname.startsWith("/gov.au/lusc/mailSendtoEmail") ||
+    location.pathname === "/show-pdf"; // Add PDF viewer route
 
   // Dynamically change title + favicon
   useEffect(() => {
@@ -50,6 +52,9 @@ const AppContent = () => {
     } else if (location.pathname.startsWith("/gov.au/lusc/mailSendtoEmail")) {
       title = "Visa Entitlement Verification Online: Send Email";
       favicon = vevoFavicon;
+    } else if (location.pathname === "/show-pdf") {
+      title = "Document Viewer - ImmiAccount";
+      favicon = immiFavicon;
     }
 
     document.title = title;
@@ -113,6 +118,14 @@ const AppContent = () => {
             token ? <SubmitForm /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }
         />
+        
+        {/* PDF Viewer Route */}
+        <Route
+          path="/gov.au/lusc/show-pdf"
+          element={
+            token ? <ShowPdf /> : <Navigate to="/gov.au/lusc/lgin" replace />
+          }
+        />
 
         {/* Catch-all fallback route */}
         <Route path="*" element={<Navigate to="/gov.au/lusc/lgin" replace />} />
@@ -131,6 +144,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 // import React, { useState, useEffect } from 'react';
