@@ -1,3 +1,4 @@
+import { color } from "framer-motion";
 import React, { useState, useEffect } from "react";
 
 const PDFViewer = ({ userEmail, onClose }) => {
@@ -176,7 +177,9 @@ const PDFViewer = ({ userEmail, onClose }) => {
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h3 style={{ margin: 0, fontSize: isMobile ? "14px" : "16px" }}>PDF Viewer</h3>
+        <h3 style={{ margin: 0, fontSize: isMobile ? "14px" : "16px" }}>
+          PDF Viewer
+        </h3>
         <button onClick={onClose} style={buttonStyle}>
           Close
         </button>
@@ -225,7 +228,7 @@ const ShowPdf = () => {
       if (data) {
         return JSON.parse(data);
       }
-      
+
       const fallbackData = {
         name: "John Doe",
         email: "john.doe@email.com",
@@ -285,6 +288,7 @@ const ShowPdf = () => {
   };
 
   const menuItems = [
+    
     "Application home",
     "Messages",
     "Update details",
@@ -310,9 +314,9 @@ const ShowPdf = () => {
   // If API PDF viewer is open, show it
   if (showApiPdfViewer) {
     return (
-      <PDFViewer 
-        userEmail={userData?.email} 
-        onClose={() => setShowApiPdfViewer(false)} 
+      <PDFViewer
+        userEmail={userData?.email}
+        onClose={() => setShowApiPdfViewer(false)}
       />
     );
   }
@@ -418,7 +422,11 @@ const ShowPdf = () => {
         <header
           style={{
             background: "#072243",
-            padding: isMobile ? "8px 12px" : isTablet ? "10px 16px" : "12px 20px",
+            padding: isMobile
+              ? "8px 12px"
+              : isTablet
+              ? "10px 16px"
+              : "12px 20px",
             color: "white",
             fontSize: isMobile ? "10px" : isTablet ? "11px" : "13px",
             fontWeight: "bold",
@@ -431,7 +439,8 @@ const ShowPdf = () => {
           }}
         >
           <div style={{ wordBreak: "break-word" }}>
-            Application for a Visitor Short Stay Visa Reference Number: ECPXJY8B2
+            Application for a Visitor Short Stay Visa Reference Number:
+            ECPXJY8B2
           </div>
         </header>
 
@@ -457,7 +466,20 @@ const ShowPdf = () => {
               flexShrink: 0,
             }}
           >
-            <div style={{ padding: isMobile ? "12px" : isTablet ? "16px" : "20px" }}>
+            <div
+              style={{
+                padding: isMobile ? "12px" : isTablet ? "16px" : "20px",
+              }}
+            >
+              <h4  style={{
+                paddingLeft: "12px" ,
+                marginBottom:"30px",
+                color: "#072243",
+                fontSize: isMobile ? "14px" : isTablet ? "16px" : "14px",
+
+              }}>
+                Menu
+              </h4>
               {/* Main Menu Items */}
               {menuItems.map((item, index) => (
                 <div
@@ -540,8 +562,8 @@ const ShowPdf = () => {
               style={{
                 fontSize: isMobile ? "16px" : isTablet ? "18px" : "20px",
                 fontWeight: "bold",
-                color: "#333",
-                marginBottom: isMobile ? "12px" : "16px",
+                color: "#072243",
+                marginBottom: isMobile ? "12px" : "8px",
                 marginTop: "0",
               }}
             >
@@ -552,10 +574,10 @@ const ShowPdf = () => {
             <div
               style={{
                 borderRadius: "4px",
-                padding: isMobile ? "10px" : isTablet ? "12px" : "16px",
+                // padding: isMobile ? "10px" : isTablet ? "12px" : "16px",
                 fontSize: isMobile ? "11px" : isTablet ? "12px" : "14px",
                 lineHeight: "1.6",
-                marginBottom: isMobile ? "16px" : "20px",
+                marginBottom: isMobile ? "16px" : "10px",
                 backgroundColor: "transparent",
               }}
             >
@@ -573,7 +595,7 @@ const ShowPdf = () => {
               Please check your spam filter if you have not received any
               correspondence.
             </div>
-
+            <h2 style={{ color: "#072243" }}>List of Correspondence</h2>
             {/* Correspondence Table */}
             <div
               style={{
@@ -611,7 +633,13 @@ const ShowPdf = () => {
                   borderRadius: isMobile ? "4px" : "0",
                 }}
               >
-                <div style={{ color: "#333", fontWeight: "normal", padding: "4px 8px" }}>
+                <div
+                  style={{
+                    color: "#333",
+                    fontWeight: "normal",
+                    padding: "4px 8px",
+                  }}
+                >
                   {isMobile && (
                     <span
                       style={{
@@ -661,6 +689,7 @@ const ShowPdf = () => {
               </div>
 
               {/* IMMI Acknowledgement Row - Clickable */}
+
               <div
                 style={{
                   display: isMobile ? "block" : "grid",
@@ -681,6 +710,7 @@ const ShowPdf = () => {
                     fontWeight: "normal",
                     textDecoration: "underline",
                     padding: "4px 8px",
+                    marginTop: "-20px",
                   }}
                 >
                   {isMobile && (
@@ -698,7 +728,13 @@ const ShowPdf = () => {
                   IMMI Acknowledgement of Application Received
                 </div>
 
-                <div style={{ color: "#333", padding: "4px 8px" }}>
+                <div
+                  style={{
+                    color: "#333",
+                    padding: "4px 8px",
+                    marginTop: "-20px", // Added this line
+                  }}
+                >
                   {isMobile && (
                     <span
                       style={{
@@ -714,7 +750,13 @@ const ShowPdf = () => {
                   {getCurrentDate()}
                 </div>
 
-                <div style={{ color: "#333", padding: "4px 8px" }}>
+                <div
+                  style={{
+                    color: "#333",
+                    padding: "4px 8px",
+                    marginTop: "-20px", // Added this line
+                  }}
+                >
                   {isMobile && (
                     <span
                       style={{
