@@ -720,6 +720,10 @@ const Dashboard = () => {
       (normalizedStatus === "visa grant" ||
         normalizedStatus === "granted" ||
         normalizedStatus === "immi refusal" ||
+        normalizedStatus === "finalized" ||
+        normalizedStatus === "pending" ||
+        normalizedStatus === "hold" ||
+        normalizedStatus === "processing" ||
         normalizedStatus === "refusal") &&
       hasPDFData()
     );

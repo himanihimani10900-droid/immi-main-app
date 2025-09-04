@@ -491,8 +491,8 @@ const ShowPdf = () => {
                     fontSize: isMobile ? "11px" : isTablet ? "12px" : "13px",
                     fontWeight: "600",
                     borderRadius: "3px",
-                    marginBottom: "4px",
-                    padding: "6px 8px",
+                    // marginBottom: "4px",
+                    padding: "4px 8px",
                     borderLeft: "3px solid transparent",
                     lineHeight: "1.4",
                   }}
@@ -532,7 +532,7 @@ const ShowPdf = () => {
                       fontWeight: "600",
                       borderRadius: "3px",
                       marginBottom: "4px",
-                      padding: "6px 8px",
+                      padding: "3px 8px",
                       borderLeft: "3px solid transparent",
                       lineHeight: "1.4",
                     }}
@@ -615,7 +615,7 @@ const ShowPdf = () => {
                   color: "white",
                 }}
               >
-                <div style={{ padding: "8px" }}>Correspondence</div>
+                <div style={{ padding: "8px" }}>Correspondence Title</div>
                 <div style={{ padding: "8px" }}>Date sent</div>
                 <div style={{ padding: "8px" }}>Email</div>
               </div>
