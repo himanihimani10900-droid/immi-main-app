@@ -57,7 +57,7 @@ const PaymentComponent = () => {
     
     try {
       const response = await fetch(
-        `https://immu-backend.up.railway.app/payment/user/${userId}`,
+        `https://immi-backend.up.railway.app/payment/user/${userId}`,
         {
           method: "GET",
           headers: createHeaders(),

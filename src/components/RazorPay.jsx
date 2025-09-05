@@ -65,7 +65,7 @@ const RazorPay = () => {
   const fetchUserTransactions = async () => {
     try {
       const response = await fetch(
-        `https://immu-backend.up.railway.app/payment/user/${userId}`,
+        `https://immi-backend.up.railway.app/payment/user/${userId}`,
         {
           method: "GET",
           headers: createHeaders(),
@@ -114,7 +114,7 @@ const RazorPay = () => {
 
     try {
       const response = await fetch(
-        "https://immu-backend.up.railway.app/payment/pay",
+        "https://immi-backend.up.railway.app/payment/pay",
         {
           method: "POST",
           headers: createHeaders(),
@@ -149,7 +149,7 @@ const RazorPay = () => {
         handler: async function (paymentResponse) {
           try {
             const verifyRes = await fetch(
-              "https://immu-backend.up.railway.app/payment/verify",
+              "https://immi-backend.up.railway.app/payment/verify",
               {
                 method: "POST",
                 headers: createHeaders(),

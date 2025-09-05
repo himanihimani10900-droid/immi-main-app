@@ -127,7 +127,7 @@ const AccountDetails = () => {
         password: password
       };
 
-      const loginResponse = await fetch('https://immu-backend.up.railway.app/login', {
+      const loginResponse = await fetch('https://immi-backend.up.railway.app/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -195,7 +195,7 @@ const AccountDetails = () => {
         email: existingData.email || ''
       };
 
-      const response = await fetch('https://immu-backend.up.railway.app/signup', {
+      const response = await fetch('https://immi-backend.up.railway.app/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

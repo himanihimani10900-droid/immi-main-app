@@ -33,7 +33,7 @@ const PDFViewer = ({ userEmail, onClose }) => {
         setError(null);
         const token = localStorage.getItem("authToken");
         const response = await fetch(
-          `https://immu-backend.up.railway.app/upload/doc/${userEmail}`,
+          `https://immi-backend.up.railway.app/upload/doc/${userEmail}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

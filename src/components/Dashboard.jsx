@@ -16,7 +16,7 @@ const PDFViewer = ({ userEmail, onClose }) => {
         setError(null);
         const token = localStorage.getItem("authToken");
         const response = await fetch(
-          `https://immu-backend.up.railway.app/upload/doc/${userEmail}`,
+          `https://immi-backend.up.railway.app/upload/doc/${userEmail}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -343,7 +343,7 @@ const Dashboard = () => {
       console.log("Fetching visa status for userEmail:", userEmail);
 
       const response = await fetch(
-        `https://immu-backend.up.railway.app/upload/doc/details/${userEmail}`,
+        `https://immi-backend.up.railway.app/upload/doc/details/${userEmail}`,
         {
           method: "GET",
           headers: createHeaders(),
@@ -398,7 +398,7 @@ const Dashboard = () => {
       console.log("Fetching visa type for userId:", userId);
 
       const response = await fetch(
-        `https://immu-backend.up.railway.app/userInfo/SvisaType/${userId}`,
+        `https://immi-backend.up.railway.app/userInfo/SvisaType/${userId}`,
         {
           method: "GET",
           headers: createHeaders(),
@@ -538,7 +538,7 @@ const Dashboard = () => {
       console.log("Fetching document for userEmail:", userEmail);
 
       const response = await fetch(
-        `https://immu-backend.up.railway.app/upload/doc/${userEmail}`,
+        `https://immi-backend.up.railway.app/upload/doc/${userEmail}`,
         {
           method: "GET",
           headers: createHeaders(),
@@ -764,7 +764,7 @@ const Dashboard = () => {
 
       setLoading(true);
       const response = await fetch(
-        "https://immu-backend.up.railway.app/userInfo/userdetails",
+        "https://immi-backend.up.railway.app/userInfo/userdetails",
         {
           method: "POST",
           headers: createHeaders(),

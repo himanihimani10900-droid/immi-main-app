@@ -42,7 +42,7 @@ const SendMail = () => {
     const fetchVisaData = async () => {
       try {
         const response = await fetch(
-          `https://immu-backend.up.railway.app/visa/visa_user_details/${visaGrantNumber}`,
+          `https://immi-backend.up.railway.app/visa/visa_user_details/${visaGrantNumber}`,
           {
             method: 'GET',
             headers: {
@@ -90,7 +90,7 @@ const SendMail = () => {
     try {
       setSending(true);
       
-      const response = await fetch('https://immu-backend.up.railway.app/email/send', {
+      const response = await fetch('https://immi-backend.up.railway.app/email/send', {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",

@@ -159,7 +159,7 @@ const StudentGuardianVisaApplication = () => {
 
     try {
       const response = await fetch(
-        "https://immu-backend.up.railway.app/userInfo/submit",
+        "https://immi-backend.up.railway.app/userInfo/submit",
         {
           method: "POST",
           headers: {

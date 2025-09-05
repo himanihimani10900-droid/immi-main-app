@@ -118,7 +118,7 @@ const AppContent = () => {
             token ? <SubmitForm /> : <Navigate to="/gov.au/lusc/lgin" replace />
           }
         />
-        
+
         {/* PDF Viewer Route */}
         <Route
           path="/gov.au/lusc/show-pdf"
@@ -144,8 +144,6 @@ const App = () => {
 };
 
 export default App;
-
-
 
 // import React, { useState, useEffect } from 'react';
 
@@ -179,7 +177,7 @@ export default App;
 //     generateHeartBreaks();
 //     const tearsInterval = setInterval(generateTears, 4000);
 //     const heartInterval = setInterval(generateHeartBreaks, 6000);
-    
+
 //     return () => {
 //       clearInterval(tearsInterval);
 //       clearInterval(heartInterval);
@@ -383,14 +381,14 @@ export default App;
 //         0%, 100% { background: linear-gradient(135deg, #4a5568 0%, #2d3748 50%, #1a202c 100%); }
 //         50% { background: linear-gradient(135deg, #2d3748 0%, #1a202c 50%, #4a5568 100%); }
 //       }
-      
+
 //       @keyframes tearFall {
 //         0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
 //         10% { opacity: 0.8; }
 //         90% { opacity: 0.8; }
 //         100% { transform: translateY(100vh) rotate(180deg); opacity: 0; }
 //       }
-      
+
 //       @keyframes heartFall {
 //         0% { transform: translateY(-50px) scale(1) rotate(0deg); opacity: 0; }
 //         15% { opacity: 0.6; }
@@ -398,30 +396,30 @@ export default App;
 //         85% { opacity: 0.6; }
 //         100% { transform: translateY(100vh) scale(0.8) rotate(360deg); opacity: 0; }
 //       }
-      
+
 //       @keyframes cloudFloat {
 //         0%, 100% { transform: translateX(-10px) translateY(0px); }
 //         50% { transform: translateX(10px) translateY(-5px); }
 //       }
-      
+
 //       @keyframes dramaticFloat {
 //         0%, 100% { transform: translateY(0px) scale(1); }
 //         50% { transform: translateY(-15px) scale(1.02); }
 //       }
-      
+
 //       @keyframes dramaticBounce {
 //         0%, 20%, 50%, 80%, 100% { transform: translateY(0) scale(1); }
 //         40% { transform: translateY(-30px) scale(1.1); }
 //         60% { transform: translateY(-15px) scale(1.05); }
 //       }
-      
+
 //       @keyframes sideCry {
 //         0%, 100% { transform: rotate(-10deg) scale(1); opacity: 1; }
 //         25% { transform: rotate(10deg) scale(1.2); opacity: 0.7; }
 //         50% { transform: rotate(-5deg) scale(0.9); opacity: 0.5; }
 //         75% { transform: rotate(5deg) scale(1.1); opacity: 0.8; }
 //       }
-      
+
 //       @keyframes dramaticShake {
 //         0%, 100% { transform: translateX(0) scale(1); }
 //         10% { transform: translateX(-8px) scale(1.02); }
@@ -430,14 +428,14 @@ export default App;
 //         40% { transform: translateX(6px) scale(0.99); }
 //         50% { transform: translateX(-4px) scale(1); }
 //       }
-      
+
 //       @keyframes emojiWiggle {
 //         0%, 100% { transform: rotate(-5deg) scale(1); }
 //         25% { transform: rotate(5deg) scale(1.1); }
 //         50% { transform: rotate(-3deg) scale(0.9); }
 //         75% { transform: rotate(3deg) scale(1.05); }
 //       }
-      
+
 //       @keyframes intenseCry {
 //         0%, 100% { transform: scale(1) rotate(0deg) translateY(0px); opacity: 1; }
 //         15% { transform: scale(1.3) rotate(-8deg) translateY(-5px); opacity: 0.8; }
@@ -446,19 +444,19 @@ export default App;
 //         60% { transform: scale(0.9) rotate(5deg) translateY(2px); opacity: 0.7; }
 //         75% { transform: scale(1.1) rotate(-3deg) translateY(-2px); opacity: 0.85; }
 //       }
-      
+
 //       @keyframes textCry {
 //         0%, 100% { transform: scale(1); color: #e53e3e; }
 //         25% { transform: scale(1.05); color: #c53030; }
 //         50% { transform: scale(0.95); color: #e53e3e; }
 //         75% { transform: scale(1.02); color: #fc8181; }
 //       }
-      
+
 //       @keyframes quoteFade {
 //         0%, 100% { opacity: 1; transform: translateY(0px); }
 //         50% { opacity: 0.6; transform: translateY(-3px); }
 //       }
-      
+
 //       @keyframes footerSob {
 //         0%, 100% { transform: scale(1); }
 //         33% { transform: scale(1.03); }
@@ -473,7 +471,7 @@ export default App;
 //         .cry-face { font-size: 2rem !important; }
 //         .side-crying-emoji { font-size: 3rem !important; }
 //       }
-      
+
 //       @media (max-width: 480px) {
 //         .blocked-title { font-size: 2rem !important; }
 //         .sad-subtitle { font-size: 1.4rem !important; }
@@ -501,7 +499,7 @@ export default App;
 
 //         {/* Falling tears */}
 //         {tears.map(tear => (
-//           <div 
+//           <div
 //             key={tear.id}
 //             style={{
 //               ...styles.tear,
@@ -516,7 +514,7 @@ export default App;
 
 //         {/* Falling broken hearts */}
 //         {heartBreaks.map(heart => (
-//           <div 
+//           <div
 //             key={heart.id}
 //             style={{
 //               ...styles.heartBreak,

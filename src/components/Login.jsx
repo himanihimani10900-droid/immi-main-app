@@ -56,7 +56,7 @@ const LoginPage = () => {
       };
 
       const response = await fetch(
-        "https://immu-backend.up.railway.app/login",
+        "https://immi-backend.up.railway.app/login",
         {
           method: "POST",
           headers: {

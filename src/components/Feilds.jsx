@@ -2151,7 +2151,7 @@ const NewApplication = () => {
 
     try {
       const response = await fetch(
-        "https://immu-backend.up.railway.app/userInfo/SvisaType",
+        "https://immi-backend.up.railway.app/userInfo/SvisaType",
         {
           method: "POST",
           headers: {

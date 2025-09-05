@@ -118,7 +118,7 @@ const VisaDetails = () => {
         setError(null);
 
         const response = await fetch(
-          `https://immu-backend.up.railway.app/visa/visa_user_details/${visaGrantNumber}`,
+          `https://immi-backend.up.railway.app/visa/visa_user_details/${visaGrantNumber}`,
           {
             method: 'GET',
             headers: {
