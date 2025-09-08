@@ -377,8 +377,8 @@ const VisaDetails = () => {
           
           {/* 8201 - Maximum 3 months study condition */}
           <div style={styles.conditionItem}>
-            <div style={styles.conditionCode}>8201 - Maximum 3 months study:</div>
-            <div style={styles.conditionDescription}>
+            {/* <div style={styles.conditionCode}>8201 - Maximum 3 months study:</div> */}
+            {/* <div style={styles.conditionDescription}>
               While in Australia, you must not engage, for more than 3 months, in any studies or training.
             </div>
             <div style={{ marginTop: "4px" }}>
@@ -391,16 +391,16 @@ const VisaDetails = () => {
               >
                 Regulations
               </a>
-            </div>
+            </div> */}
           </div>
           
           {/* 8558 - Non Resident condition */}
-          <div style={styles.conditionItem}>
+          {/* <div style={styles.conditionItem}>
             <div style={styles.conditionCode}>8558 - Non Resident:</div>
             <div style={styles.conditionDescription}>
               Cannot stay for more than 12 months in any 18 month period.
             </div>
-          </div>
+          </div> */}
         </div>
       );
     });
