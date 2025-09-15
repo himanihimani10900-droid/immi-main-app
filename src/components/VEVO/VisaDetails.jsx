@@ -363,7 +363,7 @@ const VisaDetails = () => {
       return (
         <div key={index}>
           {/* 8101 - No work condition */}
-          <div style={styles.conditionItem}>
+          {/* <div style={styles.conditionItem}>
             <div style={styles.conditionCode}>8101 - No work:</div>
             <div style={styles.conditionDescription}>
               You must not work in Australia.
@@ -373,7 +373,7 @@ const VisaDetails = () => {
               <span style={{ textDecoration: "underline" }}>work</span>{" "}
               that a person would normally get paid for.
             </div>
-          </div>
+          </div> */}
           
           {/* 8201 - Maximum 3 months study condition */}
           <div style={styles.conditionItem}>
